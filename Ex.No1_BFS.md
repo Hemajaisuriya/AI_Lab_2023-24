@@ -53,8 +53,8 @@ bfs(visited, graph, '2')
 
 
 ### Output:
-
-
+BFS order is
+2 3 4 5 6 7 8 
 
 ### Result:
 Thus the breadth first search order was found sucessfully.
