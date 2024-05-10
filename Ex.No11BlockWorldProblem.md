@@ -1,5 +1,5 @@
 # Ex.No: 11  Planning –  Block World Problem 
-### DATE: 30/03/2024                                                                           
+### DATE:   06/04/2024                                                                         
 ### REGISTER NUMBER : 212221040138
 ### AIM: 
 To find the sequence of plan for Block word problem using PDDL  
@@ -17,6 +17,7 @@ Step 10 : Obtain the plan for given problem.<br>
      
 ### Program:
 ```
+domain.pddl
 (define (domain blocksworld)
 (:requirements :strips :equality)
 (:predicates (clear ?x)
@@ -45,8 +46,7 @@ Step 10 : Obtain the plan for given problem.<br>
 :effect (and (holding ?ob) (clear ?underob)
 (not (on ?ob ?underob)) (not (clear ?ob)) (not (arm-empty)))))
 ```
-
-### Input:
+### Input1:
 ```
 (define (problem pb1)
 (:domain blocksworld)
@@ -54,11 +54,22 @@ Step 10 : Obtain the plan for given problem.<br>
 (:init (on-table a) (on-table b) (clear a) (clear b) (arm-empty))
 (:goal (and (on a b))))
 ```
-
 ### Output/Plan:
-![ai-11](https://github.com/keerthanaa10/AI_Lab_2023-24/assets/132996371/a6d09792-2914-4989-8684-7a2e4071b783)
 
+![image](https://github.com/HariHaranLK/AI_Lab_2023-24/assets/132996089/e91cb1fa-07c5-4a45-9ad9-35d314c4a625)
 
+### Input2:
+```
+(define(problem pb3)
+(:domain blocksworld)
+(:objects a b c)
+(:init (on-table a) (on-table b) (on-table c)
+(clear a) (clear b) (clear c) (arm-empty))
+(:goal (and (on a b) (on b c))))
+```
+### Output/Plan:
+
+![image](https://github.com/HariHaranLK/AI_Lab_2023-24/assets/132996089/182449ae-154b-4a4d-9df2-0ef201e1fd46)
 
 ### Result:
 Thus the plan was found for the initial and goal state of block world problem.
